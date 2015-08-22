@@ -36,17 +36,16 @@
  * fields. It's changed within this file. 
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
-
-#include <netinet/in.h>
 
 #include <assert.h>
 #include <err.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdarg.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -356,7 +355,7 @@ xbf_open(struct xbf *xbf, const char *fname)
 int
 xbf_close(struct xbf *xbf)
 {
-	int error;
+	int error = 0;
 
 	xbf_assert(xbf);
 	ASSERT(xbf->_xbf_mem != NULL);
