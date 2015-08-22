@@ -1,0 +1,92 @@
+.Dd August 17, 2009
+.Os
+.Dt LIBXBF 3
+.Sh xbf
+.Nm xbf 3
+.Nd Xilinx Bitfile Library
+.Sh SYNOPSIS
+.\"-----------------------------------------------------------------
+.Ft "int"
+.Fo xbf_open
+.Fa "struct xbf *xbf"
+.Fa "const char *fname"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "int"
+.Fo xbf_open_mem
+.Fa "struct xbf *xbf"
+.Fa "void *mem"
+.Fa "size_t mem_size"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "int"
+.Fo xbf_opened
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "int"
+.Fo xbf_close
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_errmsg
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_get_time
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_get_date
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_get_partname
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_get_ncdname
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const char *"
+.Fo xbf_get_fname
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft size_t
+.Fo xbf_get_len
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft "const unsigned char *"
+.Fo xbf_get_data
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft void
+.Fo xbf_print_fp
+.Fa "FILE *fp"
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Ft void
+.Fo xbf_print
+.Fa "struct xbf *xbf"
+.Fc
+.\"-----------------------------------------------------------------
+.Sh DESCRIPTION
+Xilinx Bitfile library provides easy access to the Xilinx Bitstream
+file throught Xilinx Bitstream Header information.
+This library will basically allow you to access raw bitstream, along
+with and synthesis information.
+.Sh BUGS
+Not all variants of handling melformed files have been tested.
+.Sh AUTHORS
+.An -nosplit
+Wojciech A. Koszek <wkoszek@FreeBSD.org>
