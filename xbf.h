@@ -124,6 +124,8 @@ int xbf_opened(struct xbf *xbf);
 #define xbf_erri(xbf, fmt, ...)						\
 	(_xbf_erri((__func__), (__LINE__), (xbf), (fmt), ##__VA_ARGS__))
 
+#ifndef strlcat
 size_t strlcat(char * __restrict dst, const char * __restrict src, size_t siz);
+#endif
 
 #endif /* _XBF_H_ */
