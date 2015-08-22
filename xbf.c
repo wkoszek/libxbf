@@ -40,6 +40,8 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 
+#include <netinet/in.h>
+
 #include <assert.h>
 #include <err.h>
 #include <errno.h>
