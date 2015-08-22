@@ -3,5 +3,6 @@ compiler:
 - clang
 - gcc
 script:
+- make fetch
 - make
 - make test
