@@ -43,16 +43,13 @@ all:	regen xbf
 xbf:	xbf.c contrib/strlcat.c Makefile
 	$(CC) $(CFLAGS) xbf.c contrib/strlcat.c -o xbf
 
-prog:	xbf.c Makefile
-	$(CC) $(CFLAGS) -DXBF_TEST_PROG xbf.c -o xbf
-
 rtest:
 	./xbf -d /tmp/_.xbf_tests -r all
 
 fetch:
 	git clone https://github.com/insop/NetFPGA.git
 
-test:	prog rtest
+test:	xbf rtest
 	rm -rf tests/libxbf.out
 	./xbf $(BITDIR)/cpci.bit >> tests/libxbf.out
 	./xbf $(BITDIR)/cpci_reprogrammer.bit >> tests/libxbf.out
