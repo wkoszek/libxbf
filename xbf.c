@@ -444,7 +444,7 @@ xbf_print_fp(FILE *fp, struct xbf *xbf)
 	(void)fprintf(fp, "   Part name: %s\n", xbf_get_partname(xbf));
 	(void)fprintf(fp, "        Date: %s\n", xbf_get_date(xbf));
 	(void)fprintf(fp, "        Time: %s\n", xbf_get_time(xbf));
-	(void)fprintf(fp, "Image lenght: %d\n", xbf_get_len(xbf));
+	(void)fprintf(fp, "Image lenght: %d\n", (int)xbf_get_len(xbf));
 }
 
 /*
