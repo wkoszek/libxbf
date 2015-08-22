@@ -80,5 +80,5 @@ testman:
 	groff -man -Tascii xbf.3
 
 clean:
-	rm -rf xbf
+	rm -rf xbf tests/libxbf.out xbf.dSYM
 
