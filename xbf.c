@@ -422,7 +422,7 @@ xbf_get_len(struct xbf *xbf)
 	return (xbf->xbf_len);
 }
 
-const unsigned char *
+const void *
 xbf_get_data(struct xbf *xbf)
 {
 

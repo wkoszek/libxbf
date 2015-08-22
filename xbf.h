@@ -109,7 +109,7 @@ struct xbf *_xbf_err(const char *func, int lineno, struct xbf *xbf,
 int _xbf_erri(const char *func, int lineno, struct xbf *xbf,
     const char *fmt, ...);
 size_t xbf_get_len(struct xbf *xbf);
-const unsigned char *xbf_get_data(struct xbf *xbf);
+const void *xbf_get_data(struct xbf *xbf);
 const char *xbf_get_partname(struct xbf *xbf);
 const char *xbf_get_date(struct xbf *xbf);
 const char *xbf_get_time(struct xbf *xbf);
