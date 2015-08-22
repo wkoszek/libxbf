@@ -40,8 +40,8 @@ CFLAGS+=	-DXBF_TEST_PROG
 
 all:	regen xbf
 
-xbf:	xbf.c Makefile
-	$(CC) $(CFLAGS) xbf.c -o xbf
+xbf:	xbf.c contrib/strlcat.c Makefile
+	$(CC) $(CFLAGS) xbf.c contrib/strlcat.c -o xbf
 
 prog:	xbf.c Makefile
 	$(CC) $(CFLAGS) -DXBF_TEST_PROG xbf.c -o xbf
