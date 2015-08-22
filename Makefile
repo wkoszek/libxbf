@@ -34,14 +34,7 @@
 #
 BITDIR=		NetFPGA/bitfiles
 
-CFLAGS+=	-std=gnu99 -fstack-protector -Wsystem-headers -Werror -Wall \
-		-Wno-format-y2k -W -Wno-unused-parameter -Wstrict-prototypes \
-		-Wmissing-prototypes -Wpointer-arith -Wreturn-type \
-		-Wcast-qual -Wwrite-strings -Wswitch -Wshadow -Wcast-align \
-		-Wunused-parameter -Wchar-subscripts -Winline \
-		-Wnested-externs -Wredundant-decls -Wno-pointer-sign
-# CFLAGS+=	-unreachable-code
-CFLAGS+=	-O0 -g -ggdb
+CFLAGS+=	-O0 -g -ggdb -Wall -Wextra
 
 CFLAGS+=	-DXBF_TEST_PROG
 
