@@ -85,9 +85,9 @@ _xbf_setup(struct xbf *xbf)
 	(*(char *)(ptr))
 
 	ptr = xbf->_xbf_mem;
-	endptr = ((char *)xbf->_xbf_mem + (char *)xbf->_xbf_memsize);
+	endptr = ((char *)xbf->_xbf_mem + xbf->_xbf_memsize);
 #define LEFT()				\
-	 ((unsigned)(endptr - ptr))
+	 ((unsigned)((void *)endptr - (void *)ptr))
 
 #define WHDR "Wrong header format! "
 
