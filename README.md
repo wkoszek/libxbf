@@ -15,6 +15,11 @@ In order to build the library run:
 
 You can also run the regression test suite:
 
+	make fetch
+
+It'll fetch several `.bit` files from the official NetFPGA repository (be
+warned -- it's 82MB by the time of writing this document). And then:
+
 	make test
 
 Which will verify that your changes didn't bring backward compatibility
