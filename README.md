@@ -73,3 +73,8 @@ xbf_print_fp(FILE *fp, struct xbf *xbf);
 void
 xbf_print(struct xbf *xbf);
 ```
+
+# Author
+
+- Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
+- [http://www.koszek.com](http://www.koszek.com)
