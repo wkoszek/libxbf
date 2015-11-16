@@ -74,6 +74,9 @@ void
 xbf_print(struct xbf *xbf);
 ```
 
+Take a look at `xbf.c`, function `bf_test`. It has a sample usage of the
+API.
+
 # Author
 
 - Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
