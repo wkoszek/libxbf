@@ -30,52 +30,63 @@ changes and 'golden model' references.
 
 API calls are pretty self-explanatory and are mentioned below.
 
-```
-int
-xbf_open(struct xbf *xbf, const char *fname);
+`void xbf_init(struct xbf *xbf)`
 
-int
-xbf_open_mem(struct xbf *xbf, void *mem, size_t mem_size);
+- Initialize the `xbf` structure for further operation.
 
-int
-xbf_opened(struct xbf *xbf);
+`int xbf_open(struct xbf *xbf, const char *fname)`
 
-int
-xbf_close(struct xbf *xbf);
+-  Open the file under `fname` and initialize the `xbf` context with it.
 
-const char *
-xbf_errmsg(struct xbf *xbf);
+`int xbf_open_mem(struct xbf *xbf, void *mem, size_t mem_size)`
 
-const char *
-xbf_get_time(struct xbf *xbf);
+- Just like `xbf_open()`, but take the data of size `mem_size` from `mem` pointer.
 
-const char *
-xbf_get_date(struct xbf *xbf);
+`int xbf_opened(struct xbf *xbf)`
 
-const char *
-xbf_get_partname(struct xbf *xbf);
+- Return true/false if the `xbf` pointer has been opened correctly.
 
-const char *
-xbf_get_ncdname(struct xbf *xbf);
+`int xbf_close(struct xbf *xbf)`
 
-const char *
-xbf_get_fname(struct xbf *xbf);
+- Close the context related with `xbf`
 
-size_t
-xbf_get_len(struct xbf *xbf);
+`const char *xbf_errmsg(struct xbf *xbf)`
 
-const unsigned char *
-xbf_get_data(struct xbf *xbf);
+- In case of error, this function will return a user-facing error message.
 
-void
-xbf_print_fp(FILE *fp, struct xbf *xbf);
+`const char *xbf_get_time(struct xbf *xbf)`,
 
-void
-xbf_print(struct xbf *xbf);
-```
+`const char *xbf_get_date(struct xbf *xbf)`,
 
-Take a look at `xbf.c`, function `bf_test`. It has a sample usage of the
-API.
+`const char *xbf_get_partname(struct xbf *xbf)`,
+
+`const char *xbf_get_ncdname(struct xbf *xbf)`,
+
+`const char *xbf_get_fname(struct xbf *xbf)`
+
+
+- All these functions return time, data, part name, `.ncd` file name and file name respectively. Passed `xbf` must have been opened correctly.
+
+
+`size_t xbf_get_len(struct xbf *xbf)`,
+`const unsigned char *xbf_get_data(struct xbf *xbf)`
+
+- Print the length of data under opened `xbf` and return its data, respectively.
+
+`void xbf_print_fp(FILE *fp, struct xbf *xbf)`,
+
+`void xbf_print(struct xbf *xbf)`
+
+- Print debugging data to file pointer `fp`. The `xbf_print` is equivalent to `xbf_print_fp(stdout, xbf)` 
+
+# Examples
+
+Take a look at `makefile`. It shows how to use `xbf` (the test program). The Travis badge will show you this use-case in action:
+
+
+[![Build Status](https://travis-ci.org/wkoszek/libxbf.svg)](https://travis-ci.org/wkoszek/libxbf)
+
+For API example, look into `xbf.c`, function `bf_test`. The `main` of `xbf.c` has a real-world code snippet. You can steal it to start from.
 
 # Author
 
